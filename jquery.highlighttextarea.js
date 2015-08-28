@@ -52,7 +52,7 @@
         words: {},
         ranges: {},
         color: '#ffff00',
-        caseSensitive: false,
+        caseSensitive: true,
         globalSearch: true,
         multiLine: true,
         wordsOnly: false,
