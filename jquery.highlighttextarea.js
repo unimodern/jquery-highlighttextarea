@@ -52,7 +52,9 @@
         words: {},
         ranges: {},
         color: '#ffff00',
-        caseSensitive: true,
+        caseSensitive: false,
+        globalSearch: true,
+        multiLine: true,
         wordsOnly: false,
         resizable: false,
         id: '',
@@ -158,7 +160,9 @@
         }
 
         $.extend(this.settings, options);
-        this.regParam = this.settings.caseSensitive ? 'gm' : 'gim';
+        this.regParam = (this.settings.globalSearch ? 'g':'') + 
+            (this.settings.caseSensitive ? '' : 'i') +
+            (this.settings.multiLine ? 'm':'');
 
         if (!$.isEmptyObject(this.settings.words)) {
             this.settings.words = Utilities.cleanWords(this.settings.words, this.settings.color);
